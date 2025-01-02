@@ -6,10 +6,10 @@ import os
 import shutil
 from shor_algorithm import run_shor_algorithm, extract_period, modular_exponentiation
 
-def clean_outputs_folder():
-    if os.path.exists("outputs"):
-        shutil.rmtree("outputs")
-    os.makedirs("outputs", exist_ok=True)
+def clean_examples_folder():
+    if os.path.exists("examples"):
+        shutil.rmtree("examples")
+    os.makedirs("examples", exist_ok=True)
 
 def create_display_circuit(N, a):
     n_count = 3
@@ -102,15 +102,15 @@ def plot_probability_peaks(N, a):
     plt.xlim(-0.05, 1.05)
     plt.ylim(0, max(probabilities) * 1.2)
     
-    plt.savefig("outputs/probability_peaks.png", dpi=300, bbox_inches='tight')
+    plt.savefig("examples/probability_peaks.png", dpi=300, bbox_inches='tight')
     plt.show()
 
-clean_outputs_folder()
+clean_examples_folder()
 
 N = 15
 a = 7
 display_circuit = create_display_circuit(N, a)
-circuit_path = "outputs/shor_circuit.png"
+circuit_path = "examples/shor_circuit.png"
 circuit_drawer(display_circuit, output="mpl", scale=1.2, style={'name': 'bw'})\
     .savefig(circuit_path)
 print(f"Circuit diagram saved to {circuit_path}")
