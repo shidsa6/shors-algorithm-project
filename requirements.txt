@@ -1,0 +1,10 @@
+# Core dependencies
+qiskit==0.45.1
+qiskit-aer==0.12.2
+numpy>=1.22.0
+
+# Visualization dependencies
+matplotlib>=3.5.0
+
+# Testing dependencies
+pytest>=7.0.0
