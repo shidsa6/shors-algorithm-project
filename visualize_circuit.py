@@ -76,7 +76,7 @@ def plot_probability_peaks(N, a):
         phases.append(phase)
         probabilities.append(count/total_shots)
     
-    r = extract_period(counts, N)
+    r = extract_period(counts, N, a)
     
     plt.figure(figsize=(15, 8))
     plt.bar(phases, probabilities, width=0.5/(2**n_count), 

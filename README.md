@@ -32,11 +32,11 @@ This project demonstrates the implementation of Shor's Algorithm, a quantum algo
    - Controlled modular exponentiation.
    - Inverse QFT.
 
-   ![Circuit Diagram for N=15 and a=7] (examples/shor_circuit.png)
+   ![Circuit Diagram for N=15 and a=7](examples/shor_circuit.png)
 
 2. **Probability Peaks**: A histogram displaying the probability of measured phases. The red dashed lines indicate expected periodicity based on the algorithm's results. This helps visualize the quantum period-finding process and highlights key phases contributing to factorization. Note that these graphs demonstrate probabilities and are best interpreted with multiple runs to mitigate probabilistic noise.
 
-   ![Probability Peaks for N=15 and a=7] (examples/probability_peaks.png)
+   ![Probability Peaks for N=15 and a=7](examples/probability_peaks.png)
 
 ## Important Notes
 

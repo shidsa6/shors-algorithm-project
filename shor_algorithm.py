@@ -63,8 +63,8 @@ def run_shor_algorithm(N, a):
     job = simulator.run(transpile(qc, simulator), shots=1024)
     counts = job.result().get_counts()
     
-    # Extract period
-    r = extract_period(counts, N)
+        # Extract period - Updated to pass 'a'
+    r = extract_period(counts, N, a)
     if not r:
         return None, None
         
@@ -79,15 +79,29 @@ def run_shor_algorithm(N, a):
         
     return factor1, factor2
 
-def extract_period(counts, N):
-    """Extract period from measurement counts."""
+def extract_period(counts, N, a):
+    """Extract period r where a^r ≡ 1 (mod N)"""
+    # First find quantum measurement differences
     measured_values = [int(key, 2) for key in counts.keys()]
     measured_values.sort()
-
+    
+    # Calculate possible periods from measurements
+    periods = []
     for i in range(1, len(measured_values)):
         r = measured_values[i] - measured_values[i-1]
-        if r > 0 and modular_exponentiation(2, r, N) == 1:
+        if r > 0:
+            periods.append(r)
+    
+    # Verify each candidate period
+    for r in periods:
+        if modular_exponentiation(a, r, N) == 1:
             return r
+            
+    # Direct period calculation if measurement fails
+    for r in range(1, N):
+        if modular_exponentiation(a, r, N) == 1:
+            return r
+            
     return None
 
 if __name__ == "__main__":
