@@ -48,8 +48,8 @@ This project demonstrates the implementation of Shor's Algorithm, a quantum algo
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/shidsa6/shors-algorithm-project.git
+   cd shors-algorithm-project
    ```
 
 2. Install dependencies:

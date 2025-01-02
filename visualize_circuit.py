@@ -12,6 +12,17 @@ def clean_examples_folder():
     os.makedirs("examples", exist_ok=True)
 
 def create_display_circuit(N, a):
+    """
+    Creates a simplified quantum circuit for Shor's algorithm, displaying essential
+    components such as the Hadamard gate, controlled-Ua, and inverse QFT operations.
+
+    Parameters:
+        N (int): The number to be factored.
+        a (int): The base for the modular exponentiation.
+
+    Returns:
+        QuantumCircuit: The created quantum circuit.
+    """
     n_count = 3
     num_target_qubits = int(np.ceil(np.log2(N)))
     qc = QuantumCircuit(n_count + num_target_qubits, n_count)
@@ -31,6 +42,17 @@ def create_display_circuit(N, a):
     return qc
 
 def create_shor_circuit(N, a):
+    """
+    Creates the quantum circuit for Shor's algorithm to factorize the given number N
+    using the base a.
+
+    Parameters:
+        N (int): The number to be factored.
+        a (int): The base for the modular exponentiation.
+
+    Returns:
+        QuantumCircuit: The created quantum circuit.
+    """
     n_count = 20
     num_target_qubits = int(np.ceil(np.log2(N)))
     qc = QuantumCircuit(n_count + num_target_qubits, n_count)
@@ -57,6 +79,19 @@ def create_shor_circuit(N, a):
     return qc
 
 def plot_probability_peaks(N, a):
+    """
+    Creates a histogram of the probability distribution of the Shor's Algorithm measurement
+    outcomes for the given number N and base a. The x-axis represents the phase of the measurement
+    outcomes, and the y-axis represents the probability of each outcome. The red dashed lines
+    indicate the expected periodicity based on the algorithm's predictions.
+
+    Parameters:
+        N (int): The number to be factored.
+        a (int): The base for the modular exponentiation.
+
+    Returns:
+        None
+    """
     simulator = Aer.get_backend("qasm_simulator")
     shots = 16384
     

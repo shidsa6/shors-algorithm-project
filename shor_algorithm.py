@@ -1,4 +1,4 @@
-from qiskit import QuantumCircuit, Aer, transpile, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit, transpile, QuantumRegister, ClassicalRegister
 from qiskit_aer import AerSimulator
 from math import gcd
 import numpy as np
@@ -59,7 +59,7 @@ def run_shor_algorithm(N, a):
     qc.measure(range(n_count), range(n_count))
     
     # Execute
-    simulator = Aer.get_backend('aer_simulator')
+    simulator = AerSimulator()
     job = simulator.run(transpile(qc, simulator), shots=1024)
     counts = job.result().get_counts()
     
