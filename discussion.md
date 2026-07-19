@@ -4,7 +4,7 @@
 Shor's Algorithm is one of the foundational quantum algorithms demonstrating the potential of quantum computing. It offers an efficient way to factorize large integers, which has profound implications in cryptography, particularly in breaking RSA encryption. This project provides an implementation of Shor's Algorithm, showcasing its core principles, practical simulation, and visualization of key outputs.
 
 ## Project Purpose
-The primary objective of this project is to provide an accessible implementation of Shor's Algorithm and represent its logical flow through simple examples. By incorporating visual aids such as circuit diagrams and probability histograms, it aims to deepen understanding of the algorithm's key steps, including quantum period finding and its role in factorization.
+The primary objective of this project is to provide a genuine, working implementation of Shor's Algorithm's quantum period-finding subroutine (not a simplified stand-in), and to make that implementation accessible through visual aids such as circuit diagrams and probability histograms. It aims to deepen understanding of the algorithm's key steps, including quantum period finding and its role in factorization, while remaining independently verifiable (see the regression tests covering the inverse QFT and controlled modular multiplication).
 
 ## Components and Functionality
 
@@ -49,8 +49,8 @@ This folder contains generated outputs from running the visualization code. It i
    - To increase accuracy, run simulations with a higher number of shots or repeat the experiments multiple times.
 
 2. **Simulated Environment:**
-   - The project uses Qiskit's classical simulator backend to simulate quantum circuits. While this is convenient for development and testing, results may differ slightly from those on a real quantum computer.
-   - For more realistic results, especially for the Quantum Fourier Transform (QFT), running the algorithm on an actual quantum device is recommended.
+   - The project uses Qiskit's classical simulator backend to simulate quantum circuits. This computes the exact, noiseless statevector, so these are ideal-case results.
+   - Real quantum hardware would introduce additional gate and decoherence noise on top of this ideal behavior, particularly during the QFT step - it would not produce "more accurate" results than the simulator, only noisier ones.
 
 ## Discussion on Visualizations
 

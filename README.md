@@ -1,6 +1,6 @@
 # Shor's Algorithm Project
 
-This project demonstrates the implementation of Shor's Algorithm, a quantum algorithm used for integer factorization. The purpose of the project is to represent the basic logic of the algorithm, implement simple examples, and provide visualizations to help understand its key components.
+This project implements Shor's Algorithm, a quantum algorithm for integer factorization, including the full quantum period-finding subroutine: controlled modular exponentiation via explicit unitary construction, an inverse Quantum Fourier Transform, and continued-fraction-based period extraction from the measured phases (not a classical fallback dressed up as a quantum circuit). The purpose of the project is to provide a genuine, independently-verifiable implementation with visualizations to help understand its key components.
 
 ## Project Structure
 
@@ -15,7 +15,7 @@ This project demonstrates the implementation of Shor's Algorithm, a quantum algo
   - Functions to create and display Shor's Algorithm circuits.
   - Probability peak plotting with realistic period markers.
 
-- **test_shor_algorithm.py**: Unit tests for validating the correctness of Shor's Algorithm implementation.
+- **tests/test_shor_algorithm.py**: Unit tests for validating the correctness of Shor's Algorithm implementation, including regression checks that the inverse QFT is a true inverse and that controlled modular multiplication performs the correct permutation.
 
 - **requirements.txt**: Lists all dependencies required to run the project.
 
@@ -40,7 +40,7 @@ This project demonstrates the implementation of Shor's Algorithm, a quantum algo
 
 ## Important Notes
 
-- The project simulates Shor's Algorithm using Qiskit's classical simulator backend. For more accurate and realistic results, especially for the Quantum Fourier Transform (QFT) step, using an actual quantum computer is recommended.
+- The project simulates Shor's Algorithm using Qiskit's classical simulator backend. The simulator computes the exact, noiseless statevector, so these are the ideal-case results; real quantum hardware would introduce additional gate and decoherence noise, not remove it, so simulator results here are a best-case reference rather than something hardware would improve on.
 
 - Due to the probabilistic nature of quantum algorithms, outputs may vary between runs. For more consistent results, increase the number of shots or run the simulation multiple times.
 
@@ -71,7 +71,7 @@ This project demonstrates the implementation of Shor's Algorithm, a quantum algo
 
 3. To run unit tests:
    ```bash
-   python -m unittest test_shor_algorithm.py
+   python -m unittest tests/test_shor_algorithm.py
    ```
 
 ## License
