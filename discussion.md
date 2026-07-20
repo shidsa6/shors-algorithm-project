@@ -11,11 +11,11 @@ The primary objective of this project is to provide a genuine, working implement
 ### **shor_algorithm.py**
 This is the main implementation file, containing the full logic of Shor's Algorithm. Key features include:
 
-- **Modular Exponentiation:** Efficient computation of \((a^x) \mod N\).
+- **Modular Exponentiation:** Efficient computation of $(a^x) \mod N$.
 - **Quantum Fourier Transform (QFT):** Core quantum operation used to extract periodicity from measurements.
-- **Quantum Period Finding:** Simulates the quantum circuit to identify the period \(r\), a critical step in factorization.
+- **Quantum Period Finding:** Simulates the quantum circuit to identify the period $r$, a critical step in factorization.
 
-The file also includes functions to validate the extracted period and compute the factors of \(N\).
+The file also includes functions to validate the extracted period and compute the factors of $N$.
 
 ### **visualize_circuit.py**
 This file enhances the understanding of Shor's Algorithm through:
@@ -59,11 +59,11 @@ This folder contains generated outputs from running the visualization code. It i
 
 2. **Probability Peaks:**
    - The histogram demonstrates the measurement probabilities of different quantum states. Red dashed lines indicate the expected periodicity based on the algorithm's predictions.
-   - Peaks correspond to quantum phases that reveal the periodic structure of modular exponentiation, a critical step in determining the factors of \(N\).
+   - Peaks correspond to quantum phases that reveal the periodic structure of modular exponentiation, a critical step in determining the factors of $N$.
 
 ## Real-World Application
 Shor's Algorithm showcases the potential of quantum computing to revolutionize cryptography. Its ability to efficiently factorize large integers poses a threat to classical cryptographic schemes such as RSA, emphasizing the need for quantum-resistant encryption methods.
 
 ---
 
-Feel free to explore the project, run the provided examples, and adapt the code for different integers \(N\) and bases \(a\). For questions or suggestions, contributions are always welcome!
+Feel free to explore the project, run the provided examples, and adapt the code for different integers $N$ and bases $a$. For questions or suggestions, contributions are always welcome!
